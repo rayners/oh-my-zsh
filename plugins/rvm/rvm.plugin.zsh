@@ -1,9 +1,3 @@
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
-fpath=($ZSH/plugins/rvm $fpath)
-autoload -U compinit
-compinit -i
-
 alias rubies='rvm list rubies'
 alias gemsets='rvm gemset list'
 
@@ -35,10 +29,6 @@ compdef _rb19 rb19
 function rvm-update {
 	rvm get head
 	rvm reload # TODO: Reload rvm completion?
-}
-
-function rvm-link-completion {
-	ln -s "$rvm_path/scripts/zsh/Completion/_rvm" "$ZSH/plugins/rvm/_rvm.official"
 }
 
 # TODO: Make this usable w/o rvm.
